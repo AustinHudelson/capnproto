@@ -151,7 +151,7 @@ while [ $# -gt 0 ]; do
       fi
       CROSS_HOST=$2
 
-      cd c++
+      cd cpp
       test -e configure || doit autoreconf -i
       test ! -e Makefile || (echo "ERROR: Directory unclean!" >&2 && false)
 
@@ -181,7 +181,7 @@ while [ $# -gt 0 ]; do
       CROSS_HOST=$3
       COMPILER_PREFIX=$4
 
-      cd c++
+      cd cpp
       test -e configure || doit autoreconf -i
       test ! -e Makefile || (echo "ERROR: Directory unclean!" >&2 && false)
       doit ./configure --disable-shared $CONFIGURE_FLAGS
@@ -216,7 +216,7 @@ while [ $# -gt 0 ]; do
       exit 0
       ;;
     cmake )
-      cd c++
+      cd cpp
       rm -rf cmake-build
       mkdir cmake-build
       cd cmake-build
@@ -321,7 +321,7 @@ while [ $# -gt 0 ]; do
       ;;
     clean )
       rm -rf tmp-staging
-      cd c++
+      cd cpp
       if [ -e Makefile ]; then
         doit make maintainer-clean
       fi
@@ -443,7 +443,7 @@ else
   # TODO(someday): Enable coroutines in g++ if supported.
 fi
 
-cd c++
+cd cpp
 doit autoreconf -i
 doit ./configure --prefix="$STAGING" $CONFIGURE_FLAGS || (cat config.log && exit 1)
 doit make -j$PARALLEL check

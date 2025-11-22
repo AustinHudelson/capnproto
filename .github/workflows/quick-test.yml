@@ -208,7 +208,7 @@ jobs:
           version: ${{ matrix.clang_version }}
       - name: super-test
         run: |
-            cd c++
+            cd cpp
             bazel test --verbose_failures --test_output=errors //...
   FreeBSD:
     runs-on: ubuntu-latest

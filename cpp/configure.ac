@@ -95,7 +95,7 @@ AS_IF([test "$external_capnp" != "no"], [
 	    CAPNPC_CXX=`dirname $CAPNP`/capnpc-c++
 	  ], [
 	    # $CAPNP is on $PATH, so tell it to find the plugin on $PATH as well.
-	    CAPNPC_CXX="c++"
+	    CAPNPC_CXX="cpp"
 	  ])
 	])
 	AC_SUBST([CAPNP])

@@ -65,7 +65,7 @@ build_packages() {
   echo "========================================================================="
 
   # make dist tarball and move into ..
-  cd c++
+  cd cpp
   doit autoreconf -i
   doit ./configure
   doit make -j$(nproc) distcheck
