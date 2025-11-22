@@ -1,3 +1,5 @@
+ASH fork of capnproto Source for premake compat layer
+
 [![Quick Tests](https://github.com/capnproto/capnproto/workflows/Quick%20Tests/badge.svg?branch=master&event=push)](https://github.com/capnproto/capnproto/actions?query=workflow%3A%22Quick+Tests%22)
 [![Release Tests](https://github.com/capnproto/capnproto/workflows/Release%20Tests/badge.svg?branch=master&event=push)](https://github.com/capnproto/capnproto/actions?query=workflow%3A%22Release+Tests%22)
 
