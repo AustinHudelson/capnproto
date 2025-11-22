@@ -13,7 +13,7 @@
 #      export PATH=$PREFIX/bin:$PATH
 #      mkdir ../build-samples
 #      cd ../build-samples
-#      cmake ../c++/samples
+#      cmake ../cpp/samples
 #      cmake --build .
 
 cmake_minimum_required(VERSION 3.10)

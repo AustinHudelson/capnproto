@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [ "$1" != "package" ] && [ "$1" != "bump-major" ]; then
-  if (git grep -Er KJ_DBG c++/src | egrep -v '/debug(-test)?[.]' | grep -v 'See KJ_DBG\.$'); then
+  if (git grep -Er KJ_DBG cpp/src | egrep -v '/debug(-test)?[.]' | grep -v 'See KJ_DBG\.$'); then
     echo '*** Error:  There are instances of KJ_DBG in the code.' >&2
     exit 1
   fi
@@ -20,7 +20,7 @@ doit() {
 }
 
 get_version() {
-  local VERSION=$(grep '^AC_INIT' c++/configure.ac | sed -e 's/^[^]]*],\[\([^]]*\)].*$/\1/g')
+  local VERSION=$(grep '^AC_INIT' cpp/configure.ac | sed -e 's/^[^]]*],\[\([^]]*\)].*$/\1/g')
   if [[ ! "$VERSION" =~ $1 ]]; then
     echo "Couldn't parse version: $VERSION" >&2
     exit 1
@@ -38,8 +38,8 @@ update_version() {
   local BRANCH_DESC=$3
 
   local OLD_REGEX=${OLD//./[.]}
-  doit sed -i -e "s/$OLD_REGEX/$NEW/g" c++/configure.ac
-  doit sed -i -e "s/set(VERSION.*)/set(VERSION $NEW)/g" c++/CMakeLists.txt
+  doit sed -i -e "s/$OLD_REGEX/$NEW/g" cpp/configure.ac
+  doit sed -i -e "s/set(VERSION.*)/set(VERSION $NEW)/g" cpp/CMakeLists.txt
 
   local NEW_NOTAG=${NEW%%-*}
   declare -a NEW_ARR=(${NEW_NOTAG//./ })
@@ -47,11 +47,11 @@ update_version() {
       s/^#define CAPNP_VERSION_MAJOR [0-9]+\$/#define CAPNP_VERSION_MAJOR ${NEW_ARR[0]}/g;
       s/^#define CAPNP_VERSION_MINOR [0-9]+\$/#define CAPNP_VERSION_MINOR ${NEW_ARR[1]}/g;
       s/^#define CAPNP_VERSION_MICRO [0-9]+\$/#define CAPNP_VERSION_MICRO ${NEW_ARR[2]:-0}/g" \
-      c++/src/capnp/common.h
+      cpp/src/capnp/common.h
 
   local NEW_COMBINED=$(( ${NEW_ARR[0]} * 1000000 + ${NEW_ARR[1]} * 1000 + ${NEW_ARR[2]:-0 }))
   doit sed -i -re "s/^#elif CAPNP_VERSION != [0-9]*\$/#elif CAPNP_VERSION != $NEW_COMBINED/g" \
-      c++/src/*/*.capnp.h c++/src/*/*/*.capnp.h
+      cpp/src/*/*.capnp.h cpp/src/*/*/*.capnp.h
 
   doit git commit -a -m "Set $BRANCH_DESC version to $NEW."
 }

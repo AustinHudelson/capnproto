@@ -42,7 +42,7 @@ How to release
 
 * Install your release candidates on your local machine, as if you were a user.
 
-* Go to `c++/samples` in the git repo and run `./test.sh`.  It will try to build against your
+* Go to `cpp/samples` in the git repo and run `./test.sh`.  It will try to build against your
   installed copy.
 
 * Post the release candidates somewhere public and then send links to the mailing list for people

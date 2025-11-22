@@ -7,24 +7,24 @@
 .pydevproject
 .settings
 .dist-buildwrapper
-/c++/gen/
+/cpp/gen/
 
 # Code you may want to map in from elsewhere.
-/c++/src/base
-/c++/src/capnp/compilerbin
-/c++/src/ekam
-/c++/src/os
-/c++/src/protobuf
-/c++/src/snappy
-/c++/src/samples
+/cpp/src/base
+/cpp/src/capnp/compilerbin
+/cpp/src/ekam
+/cpp/src/os
+/cpp/src/protobuf
+/cpp/src/snappy
+/cpp/src/samples
 
 # Ekam build artifacts.
-/c++/tmp/
-/c++/bin/
-/c++/deps/
+/cpp/tmp/
+/cpp/bin/
+/cpp/deps/
 
 # setup-ekam.sh
-/c++/.ekam
+/cpp/.ekam
 
 # super-test.sh
 /tmp-staging
@@ -39,40 +39,40 @@
 /compiler/dist/
 
 # Make artefacts
-/c++/.libs/
-/c++/Makefile
-/c++/Makefile.in
-/c++/**/*.o
-/c++/**/*.lo
-/c++/**/.deps/
-/c++/**/.dirstamp
-/c++/stamp-h1
-/c++/**/*.log
-/c++/test_capnpc_middleman
-/c++/**/test*.capnp.*
-/c++/*.la
-/c++/**/*.trs
-/c++/aclocal.m4
-/c++/autom4te.cache/
-/c++/build-aux/
-/c++/capnp
-/c++/capnp-evolution-test
-/c++/cmake/CapnProtoConfig.cmake
-/c++/cmake/CapnProtoConfigVersion.cmake
-/c++/pkgconfig/*.pc
-/c++/capnp-test
-/c++/capnpc-c++
-/c++/capnpc-capnp
-/c++/config.*
-/c++/configure
-/c++/libtool
-/c++/m4/libtool.m4
-/c++/m4/ltoptions.m4
-/c++/m4/ltsugar.m4
-/c++/m4/ltversion.m4
-/c++/m4/lt~obsolete.m4
-/c++/samples/addressbook
-/c++/.cache/
+/cpp/.libs/
+/cpp/Makefile
+/cpp/Makefile.in
+/cpp/**/*.o
+/cpp/**/*.lo
+/cpp/**/.deps/
+/cpp/**/.dirstamp
+/cpp/stamp-h1
+/cpp/**/*.log
+/cpp/test_capnpc_middleman
+/cpp/**/test*.capnp.*
+/cpp/*.la
+/cpp/**/*.trs
+/cpp/aclocal.m4
+/cpp/autom4te.cache/
+/cpp/build-aux/
+/cpp/capnp
+/cpp/capnp-evolution-test
+/cpp/cmake/CapnProtoConfig.cmake
+/cpp/cmake/CapnProtoConfigVersion.cmake
+/cpp/pkgconfig/*.pc
+/cpp/capnp-test
+/cpp/capnpc-c++
+/cpp/capnpc-capnp
+/cpp/config.*
+/cpp/configure
+/cpp/libtool
+/cpp/m4/libtool.m4
+/cpp/m4/ltoptions.m4
+/cpp/m4/ltsugar.m4
+/cpp/m4/ltversion.m4
+/cpp/m4/lt~obsolete.m4
+/cpp/samples/addressbook
+/cpp/.cache/
 
 # editor artefacts
 *~
@@ -82,4 +82,4 @@
 
 # bazel output
 bazel-*
-/c++/MODULE.bazel.lock
+/cpp/MODULE.bazel.lock

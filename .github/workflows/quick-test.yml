@@ -138,7 +138,7 @@ jobs:
             cmake --build build-output --config debug --target install
 
             echo "Building Cap'n Proto samples with ${{ matrix.target }}"
-            cmake -Hc++/samples -Bbuild-output-samples ${{ matrix.arch }} -G "${{ matrix.target }}" -DCMAKE_BUILD_TYPE=debug -DCMAKE_PREFIX_PATH=%CD%\capnproto-c++-install
+            cmake -Hcpp/samples -Bbuild-output-samples ${{ matrix.arch }} -G "${{ matrix.target }}" -DCMAKE_BUILD_TYPE=debug -DCMAKE_PREFIX_PATH=%CD%\capnproto-c++-install
             cmake --build build-output-samples --config debug
 
             cd build-output\src
@@ -160,7 +160,7 @@ jobs:
             cmake --build build-output --target install -- -j2
 
             echo "Building Cap'n Proto samples with MinGW"
-            cmake -Hc++/samples -Bbuild-output-samples -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=debug -DCMAKE_PREFIX_PATH=%CD%\capnproto-c++-install -DCMAKE_SH="CMAKE_SH-NOTFOUND"
+            cmake -Hcpp/samples -Bbuild-output-samples -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=debug -DCMAKE_PREFIX_PATH=%CD%\capnproto-c++-install -DCMAKE_SH="CMAKE_SH-NOTFOUND"
             cmake --build build-output-samples
 
             cd build-output\src
